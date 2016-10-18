@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4p2-Pl-rIa">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search View Controller-->
+        <scene sceneID="ZHG-nz-l3j">
+            <objects>
+                <viewController id="4p2-Pl-rIa" customClass="SearchViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="beL-Lw-EFb"/>
+                        <viewControllerLayoutGuide type="bottom" id="6zS-Ao-Ffi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XbM-fJ-9RZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="XlT-z2-U40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please specify a range of IP addresses to begin" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4nr-gA-0vw">
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2B-Mt-kSu">
+                                <accessibility key="accessibilityConfiguration" label="Starting IP Address"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5n-uX-sRD">
+                                <accessibility key="accessibilityConfiguration" label="Ending IP Address"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Starting IP address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xb5-V3-Rcs">
+                                <accessibility key="accessibilityConfiguration" identifier="startIPTextField" label="Starting IP Address"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ending IP address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MIL-v6-Tl4">
+                                <accessibility key="accessibilityConfiguration" identifier="endIPTextField" label="Ending IP Address"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFw-sY-0Nc">
+                                <accessibility key="accessibilityConfiguration" label="Locate"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="77" id="Cuj-9f-ZVj"/>
+                                </constraints>
+                                <state key="normal" title="Locate"/>
+                                <connections>
+                                    <action selector="locateButtonPressed:" destination="4p2-Pl-rIa" eventType="touchUpInside" id="psV-NI-zZz"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" verticalCompressionResistancePriority="751" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="EC4-bM-C3Q"/>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Xb5-V3-Rcs" secondAttribute="trailing" constant="4" id="BVi-Lf-wFO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MIL-v6-Tl4" secondAttribute="trailing" constant="4.5" id="Cc0-Td-xEc"/>
+                            <constraint firstItem="sFw-sY-0Nc" firstAttribute="top" secondItem="MIL-v6-Tl4" secondAttribute="bottom" constant="8" id="DYf-bj-mS3"/>
+                            <constraint firstItem="MIL-v6-Tl4" firstAttribute="top" secondItem="Xb5-V3-Rcs" secondAttribute="bottom" constant="8" id="Gth-Zd-hOo"/>
+                            <constraint firstItem="XlT-z2-U40" firstAttribute="leading" secondItem="XbM-fJ-9RZ" secondAttribute="leading" id="IGd-am-IId"/>
+                            <constraint firstItem="Xb5-V3-Rcs" firstAttribute="top" secondItem="4nr-gA-0vw" secondAttribute="bottom" constant="8" id="Nfh-su-x5i"/>
+                            <constraint firstItem="6zS-Ao-Ffi" firstAttribute="top" secondItem="XlT-z2-U40" secondAttribute="bottom" id="OqB-OU-wMA"/>
+                            <constraint firstItem="sFw-sY-0Nc" firstAttribute="centerX" secondItem="XbM-fJ-9RZ" secondAttribute="centerX" id="TBu-K8-OX7"/>
+                            <constraint firstItem="F2B-Mt-kSu" firstAttribute="leading" secondItem="XbM-fJ-9RZ" secondAttribute="leadingMargin" constant="4" id="Z3z-Ak-e2q"/>
+                            <constraint firstItem="4nr-gA-0vw" firstAttribute="top" secondItem="beL-Lw-EFb" secondAttribute="bottom" id="bpc-bP-nzX"/>
+                            <constraint firstItem="F2B-Mt-kSu" firstAttribute="top" secondItem="4nr-gA-0vw" secondAttribute="bottom" constant="14" id="erT-yg-6ht"/>
+                            <constraint firstItem="4nr-gA-0vw" firstAttribute="leading" secondItem="XbM-fJ-9RZ" secondAttribute="leadingMargin" constant="-9" id="fHf-ZQ-GnZ"/>
+                            <constraint firstItem="Xb5-V3-Rcs" firstAttribute="leading" secondItem="F2B-Mt-kSu" secondAttribute="trailing" constant="7" id="iOL-YL-ubi"/>
+                            <constraint firstAttribute="trailing" secondItem="XlT-z2-U40" secondAttribute="trailing" id="jLO-It-xw7"/>
+                            <constraint firstItem="EC4-bM-C3Q" firstAttribute="leading" secondItem="sFw-sY-0Nc" secondAttribute="trailing" constant="8" id="l6F-FS-nd1"/>
+                            <constraint firstItem="EC4-bM-C3Q" firstAttribute="top" secondItem="MIL-v6-Tl4" secondAttribute="bottom" constant="13" id="mLH-oS-CGd"/>
+                            <constraint firstItem="J5n-uX-sRD" firstAttribute="top" secondItem="F2B-Mt-kSu" secondAttribute="bottom" constant="16.5" id="oDf-fH-3NR"/>
+                            <constraint firstItem="XlT-z2-U40" firstAttribute="top" secondItem="sFw-sY-0Nc" secondAttribute="bottom" constant="9" id="q8Z-Gb-DoS"/>
+                            <constraint firstItem="MIL-v6-Tl4" firstAttribute="leading" secondItem="J5n-uX-sRD" secondAttribute="trailing" constant="7.5" id="s1G-dN-Q7C"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4nr-gA-0vw" secondAttribute="trailing" constant="-9" id="txX-nR-wi2"/>
+                            <constraint firstItem="J5n-uX-sRD" firstAttribute="leading" secondItem="XbM-fJ-9RZ" secondAttribute="leadingMargin" constant="24" id="zJS-BV-ElT"/>
+                            <constraint firstItem="XlT-z2-U40" firstAttribute="top" secondItem="J5n-uX-sRD" secondAttribute="bottom" constant="50.5" id="zhK-zD-lHV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="EC4-bM-C3Q" id="HWj-f2-vjQ"/>
+                        <outlet property="endAddressTextField" destination="MIL-v6-Tl4" id="Nef-ka-8bd"/>
+                        <outlet property="locateButton" destination="sFw-sY-0Nc" id="0m2-Rm-3FP"/>
+                        <outlet property="mapView" destination="XlT-z2-U40" id="n5Y-eg-NJy"/>
+                        <outlet property="startAddressTextField" destination="Xb5-V3-Rcs" id="Knc-Zk-Dsy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Whw-kc-0P6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="184.80000000000001" y="29.23538230884558"/>
+        </scene>
+    </scenes>
+</document>
